@@ -3,6 +3,8 @@
 /*                                                                         */
 /* SYS_ and friends                                                        */
 
+#include "float.h"
+
 #ifndef SYS                                 /* only include once (dtoa.c)  */
 
 /* Inclusion of a system herein does not necessarily mean that the source  */

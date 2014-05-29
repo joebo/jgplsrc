@@ -21,14 +21,14 @@
 // 10. run jreg with new tlb files
 
 #include <windows.h>
-#include "..\jsrc\j.h"
-#include "..\jsrc\jlib.h"
+#include "..\j.h"
+#include "..\jlib.h"
 
 void wtom(US* src, I srcn, UC* snk);
 int valid(C* psrc, C* psnk);
 C* esub(J jt, long ec);
 
-extern int uniflag;
+int uniflag;
 
 I jdo(J, C*);
 
@@ -475,7 +475,7 @@ void oleoutput(J jt, I n, char* s)
 	else
 	{
 		I len = SysStringLen(jt->opbstr);
-		SysReAllocStringLen(&(BSTR)jt->opbstr, 0, (UINT)(len+n+k));
+		SysReAllocStringLen(((BSTR)jt->opbstr), 0, (UINT)(len+n+k));
 		fixoutput(s, (BSTR)jt->opbstr + len, n);
 	}
 }

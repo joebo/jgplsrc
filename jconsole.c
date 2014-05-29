@@ -60,6 +60,7 @@ char* Jinput_stdio(char* prompt)
 {
 	fputs(prompt,stdout);
 	fflush(stdout); /* windows emacs */
+        memset(input, 0, sizeof(input));
 	if(!fgets(input, sizeof(input), stdin))
 	{
 #ifdef _WIN32
@@ -73,6 +74,7 @@ char* Jinput_stdio(char* prompt)
 		return "2!:55''";
 #endif
 	}
+        input[strlen(input)-2] = '\0';
 	return input;
 }
 
@@ -126,6 +128,7 @@ J jt;
 int main(int argc, char* argv[])
 {
  void* callbacks[] = {Joutput,0,Jinput,0,(void*)SMCON}; int type;
+
 
  jepath(argv[0]);     // get path to JFE folder
  jt=jeload(callbacks);
