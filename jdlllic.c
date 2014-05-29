@@ -2,7 +2,7 @@
 /* License in license.txt.                                   */
 /* encode/decode routines - license keys and ijl                           */
 #ifdef _WIN32
-#include "..\jsrc\j.h"
+#include "j.h"
 #else
 #include "j.h"
 #endif
